@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :books
   has_many :favorites
   has_many :favorited_books, through: :favorites, source: :book
+  has_many :book_comments
   attachment :profile_image, destroy: false
 
   def already_liked?(book)
